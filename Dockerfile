@@ -5,7 +5,8 @@ COPY ./entrypoint.sh /
 COPY ./init.R /
 
 RUN apt update && \
-    apt install -y  mecab mecab-ipadic-utf8 fonts-ipafont libmecab-dev libcurl4-openssl-dev libssl-dev && \
+    apt install -y  mecab mecab-ipadic-utf8 fonts-ipafont libmecab-dev && \
+    apt install -y  libcurl4-openssl-dev libssl-dev libxml2-dev && \
     Rscript /init.R && \
     chmod +x /entrypoint.sh
 
