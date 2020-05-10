@@ -12,3 +12,11 @@ function R
     docker run -it --rm -v (pwd):/sync -v $HOME/.renv:/root/.local/share/renv dr666m1/myr
 end
 ```
+
+# tips
+## fail to install packages
+when you use WSL, you may fail to install some packages. try this.
+```
+Sys.setenv(R_INSTALL_STAGED=F)
+install.packages("...")
+```
