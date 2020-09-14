@@ -1,4 +1,4 @@
-FROM r-base:4.0.2
+FROM r-base:4.0.1
 
 COPY ./entrypoint.sh /
 
