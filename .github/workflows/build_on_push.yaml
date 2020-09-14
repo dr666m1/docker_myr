@@ -9,7 +9,7 @@ jobs:
         id: prep
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            TAG=${GITHUB_REF#/refs/tags/}
+            TAG=${GITHUB_REF#refs/tags/}
           else
             TAG="latest"
           fi
