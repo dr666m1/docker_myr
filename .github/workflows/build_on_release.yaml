@@ -1,5 +1,7 @@
 name: Publish Docker image
 on: release
+  types:
+    - published
 jobs:
   main:
     name: Push Docker image to Docker Hub
@@ -9,7 +11,7 @@ jobs:
         id: prep
         run: |
           TAG=$GITHUB_REF
-          echo "::set-output name=tag::${TAG}"
+          echo "::set-output name=tag::${TAG#refs/tags/}"
 
       - name: Checkout
         uses: actions/checkout@v2
